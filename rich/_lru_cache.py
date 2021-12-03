@@ -1,12 +1,11 @@
-from collections import OrderedDict
-from typing import Dict, Generic, TypeVar
+from typing import Dict, Generic, TypeVar, OrderedDict
 
 
 CacheKey = TypeVar("CacheKey")
 CacheValue = TypeVar("CacheValue")
 
 
-class LRUCache(Generic[CacheKey, CacheValue], OrderedDict):  # type: ignore # https://github.com/python/mypy/issues/6904
+class LRUCache(Generic[CacheKey, CacheValue], OrderedDict[CacheKey, CacheValue]):
     """
     A dictionary-like container that stores a given maximum items.
 
